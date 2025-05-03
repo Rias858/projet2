@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:projet2/myMind.dart';
 import 'package:projet2/profile_info.dart';
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,6 +23,8 @@ class LoginPage extends StatelessWidget {
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
+  LoginPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,12 +32,6 @@ class LoginPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () {
-            // Action pour le bouton retour
-          },
-        ),
         title: Text(
           'Connexion',
           style: TextStyle(color: Colors.white),
@@ -90,7 +89,7 @@ class LoginPage extends StatelessWidget {
                Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => AccountPage(),
+                      builder: (context) => BodyPage(),
                     ));
               },
               child: Text(
@@ -102,10 +101,14 @@ class LoginPage extends StatelessWidget {
             Center(
               child: TextButton(
                 onPressed: () {
-                  // Action pour le lien de réinitialisation du mot de passe
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => AccountPage(),
+                    ));
                 },
                 child: Text(
-                  'Vous avez oublié votre mot de passe? Réinitialiser-le',
+                  'Pas de compte? Inscrivez-vous !',
                   style: TextStyle(color: Colors.blue, fontSize: 14),
                 ),
               ),
