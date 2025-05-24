@@ -3,6 +3,8 @@ import 'package:image_picker/image_picker.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
 
+import 'package:projet2/main.dart';
+
 class AccountPage extends StatefulWidget {
   @override
   _AccountPageState createState() => _AccountPageState();
@@ -30,6 +32,11 @@ class _AccountPageState extends State<AccountPage> {
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.white,),
           onPressed: () {
+            Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LoginPage(),
+                    ));
             // Action pour le bouton retour
           },
         ),
