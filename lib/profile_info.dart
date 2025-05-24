@@ -6,6 +6,8 @@ import 'dart:io';
 import 'package:projet2/main.dart';
 
 class AccountPage extends StatefulWidget {
+  const AccountPage({super.key});
+
   @override
   _AccountPageState createState() => _AccountPageState();
 }
